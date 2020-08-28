@@ -1,5 +1,8 @@
 package com.example.mypa;
 
+import android.net.Uri;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,5 +47,18 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
+    }
+
+    private Uri[] fileUris = new Uri[10];
+
+    private class FileUriCallback implements
+            NfcAdapter.CreateBeamUrisCallback {
+        public FileUriCallback() {
+        }
+
+        @Override
+        public Uri[] createBeamUris(NfcEvent event) {
+            return fileUris;
+        }
     }
 }
