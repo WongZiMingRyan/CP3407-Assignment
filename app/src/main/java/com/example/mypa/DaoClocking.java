@@ -8,7 +8,7 @@ import androidx.room.Query;
 
 import java.util.List;
 
-import static androidx.room.OnConflictStrategy.REPLACE
+import static androidx.room.OnConflictStrategy.REPLACE;
 
 @Dao
 public interface DaoClocking {
