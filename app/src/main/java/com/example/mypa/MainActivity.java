@@ -16,7 +16,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    List<DataClocking> dataclocking = new ArrayList<>();
+    RoomDB databaseclocking;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
