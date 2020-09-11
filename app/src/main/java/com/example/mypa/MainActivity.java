@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<DataClocking> dataclocking = new ArrayList<>();
     RoomDB databaseclocking;
+    MainAdapter adapter;
 
 
     @Override

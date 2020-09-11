@@ -8,6 +8,6 @@
     <string name="previous">Home</string>
 
     <string name="hello_first_fragment">Profile and Status</string>
-    <string name="hello_second_fragment">Tap to unlock door</string>
+    <string name="Tap_to_unlock_door">Tap to unlock door</string>
     <string name="demo_nfc_scan">Demo NFC scan</string>
 </resources>
