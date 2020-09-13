@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -15,33 +17,29 @@ import com.google.android.material.snackbar.Snackbar;
 public class ThirdFragment extends Fragment {
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-
-    ) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        View view = inflater.inflate(R.layout.fragment_third, container, false);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
+        final WordListAdapter adapter = new WordListAdapter(view.getContext());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        return view;
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        FloatingActionButton fab = view.findViewById(R.id.fab2);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Your Attendance has been Recorded", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
-        view.findViewById(R.id.fab3).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.fab3v1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FirstFragment);
+                        .navigate(R.id.action_ThirdFragment_to_SecondFragment);
             }
         });
     }

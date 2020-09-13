@@ -33,7 +33,7 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        FloatingActionButton fab = view.findViewById(R.id.fab2);
+        FloatingActionButton fab = view.findViewById(R.id.fab2v2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,11 +42,19 @@ public class SecondFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.fab3).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.fab2v1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
+            }
+        });
+
+        view.findViewById(R.id.fab2v3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
             }
         });
     }

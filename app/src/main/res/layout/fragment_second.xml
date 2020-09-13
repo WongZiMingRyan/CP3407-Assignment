@@ -7,7 +7,7 @@
     tools:context=".SecondFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab2"
+        android:id="@+id/fab2v2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -24,21 +24,21 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab3"
+        android:id="@+id/fab2v1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         app:backgroundTint="#673AB7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/textView2v1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2v2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
@@ -57,18 +57,31 @@
         android:layout_marginRight="177dp"
         android:layout_marginBottom="16dp"
         android:text="@string/demo_nfc_scan"
-        app:layout_constraintBottom_toTopOf="@+id/fab2"
+        app:layout_constraintBottom_toTopOf="@+id/fab2v2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2v1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/key"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/textView2v2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2v1" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2v3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_my_calendar"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
