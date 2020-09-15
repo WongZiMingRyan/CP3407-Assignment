@@ -39,13 +39,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View view) {
                 Snackbar.make(view, "Your Attendance has been Recorded", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                //prepare the following string into the database
-                String word = "test user clocked in";
-                //Prepare the code to add the string to the database
-                Intent replyIntent = new Intent();
-                replyIntent.putExtra(EXTRA_REPLY, word);
-                getActivity().setResult(RESULT_OK, replyIntent);
-                getActivity().finish();
+
             }
 
         });

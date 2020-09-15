@@ -71,7 +71,7 @@ public class ThirdFragment extends Fragment {
         view.findViewById(R.id.fab3v2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Word word = new Word("test user has clocked in");
+                Word word = new Word("test user has clocked in ");
                 mWordViewModel.insert(word);
             }
         });
