@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Calendar;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
@@ -71,7 +72,16 @@ public class ThirdFragment extends Fragment {
         view.findViewById(R.id.fab3v2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Word word = new Word("test user has clocked in ");
+                Calendar rightNow = Calendar.getInstance();
+                String hour = Integer.toString(rightNow.get(Calendar.HOUR_OF_DAY));
+                String minute = Integer.toString(rightNow.get(Calendar.MINUTE));
+                if (minute.length() == 1){
+                    minute = "0" + minute;
+                } if (minute.length() == 0) {
+                    minute = "00";
+                }
+                String entry = "Test user clocked at " + hour + ":" + minute;
+                Word word = new Word(entry);
                 mWordViewModel.insert(word);
             }
         });
