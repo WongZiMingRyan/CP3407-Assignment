@@ -49,12 +49,8 @@ public class FragmentCharlie extends Fragment {
                 adapter.setWords(words);
             }
         });
-
         return view;
-
     }
-
-
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
