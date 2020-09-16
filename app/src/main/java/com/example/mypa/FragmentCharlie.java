@@ -1,6 +1,5 @@
 package com.example.mypa;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
@@ -8,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,15 +17,12 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 import java.util.List;
 
-import static android.app.Activity.RESULT_OK;
-
-public class ThirdFragment extends Fragment {
+public class FragmentCharlie extends Fragment {
 
     private WordViewModel mWordViewModel;
 
@@ -35,7 +30,7 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_third, container, false);
+        View view = inflater.inflate(R.layout.fragment_charlie, container, false);
 
         //Define the recyclerView
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
@@ -68,8 +63,8 @@ public class ThirdFragment extends Fragment {
         view.findViewById(R.id.fab3v1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FirstFragment);
+                NavHostFragment.findNavController(FragmentCharlie.this)
+                        .navigate(R.id.action_FragmentCharlie_to_FragmentAlpha);
             }
         });
 
