@@ -1,6 +1,9 @@
 package com.example.mypa;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,6 +59,8 @@ public class ThirdFragment extends Fragment {
 
     }
 
+
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -64,7 +69,7 @@ public class ThirdFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_SecondFragment);
+                        .navigate(R.id.action_ThirdFragment_to_FirstFragment);
             }
         });
 
@@ -87,8 +92,23 @@ public class ThirdFragment extends Fragment {
                 String entry = "Test user clocked at " + hour + ":" + minute;
                 Word word = new Word(entry);
                 mWordViewModel.insert(word);
+                Snackbar.make(view, "Your Attendance has been Recorded", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
+    }
+
+    private Uri[] fileUris = new Uri[10];
+
+    private class FileUriCallback implements
+            NfcAdapter.CreateBeamUrisCallback {
+        public FileUriCallback() {
+        }
+
+        @Override
+        public Uri[] createBeamUris(NfcEvent event) {
+            return fileUris;
+        }
     }
 
 }
