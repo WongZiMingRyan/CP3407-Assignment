@@ -74,6 +74,11 @@ public class ThirdFragment extends Fragment {
             public void onClick(View view) {
                 Calendar rightNow = Calendar.getInstance();
                 String hour = Integer.toString(rightNow.get(Calendar.HOUR_OF_DAY));
+                if (hour.length() == 1){
+                    hour = "0" + hour;
+                } if (hour.length() == 0) {
+                    hour = "00";
+                }
                 String minute = Integer.toString(rightNow.get(Calendar.MINUTE));
                 if (minute.length() == 1){
                     minute = "0" + minute;
