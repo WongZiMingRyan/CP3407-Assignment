@@ -27,7 +27,6 @@ import static android.app.Activity.RESULT_OK;
 public class ThirdFragment extends Fragment {
 
     private WordViewModel mWordViewModel;
-    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,12 +89,6 @@ public class ThirdFragment extends Fragment {
                 mWordViewModel.insert(word);
             }
         });
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-            Word word = new Word(data.getStringExtra(SecondFragment.EXTRA_REPLY));
-            mWordViewModel.insert(word);
     }
 
 }
