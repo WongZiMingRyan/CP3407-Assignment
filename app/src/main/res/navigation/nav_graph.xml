@@ -3,25 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/FragmentAlpha">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/FragmentAlpha"
         android:name="com.example.mypa.FragmentAlpha"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_alpha">
 
         <action
             android:id="@+id/action_FragmentAlpha_to_FragmentCharlie"
-            app:destination="@id/ThirdFragment" />
+            app:destination="@id/FragmentCharlie" />
+        <action
+            android:id="@+id/action_FragmentAlpha_to_FragmentDelta"
+            app:destination="@id/FragmentDelta" />
+        <action
+            android:id="@+id/action_FragmentAlpha_to_fragmentEcho"
+            app:destination="@id/fragmentEcho" />
     </fragment>
     <fragment
-        android:id="@+id/ThirdFragment"
+        android:id="@+id/FragmentCharlie"
         android:name="com.example.mypa.FragmentCharlie"
         android:label="third_fragment_label"
         tools:layout="@layout/fragment_charlie">
         <action
             android:id="@+id/action_FragmentCharlie_to_FragmentAlpha"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/FragmentAlpha" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentDelta"
+        android:name="com.example.mypa.FragmentDelta"
+        android:label="delta_fragment"
+        tools:layout="@layout/fragment_delta" >
+        <action
+            android:id="@+id/action_FragmentDelta_to_FragmentAlpha"
+            app:destination="@id/FragmentAlpha" />
+        <action
+            android:id="@+id/action_FragmentDelta_to_fragmentEcho"
+            app:destination="@id/fragmentEcho" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEcho"
+        android:name="com.example.mypa.FragmentEcho"
+        android:label="fragment_echo"
+        tools:layout="@layout/fragment_echo" >
+        <action
+            android:id="@+id/action_fragmentEcho_to_FragmentDelta"
+            app:destination="@id/FragmentDelta" />
     </fragment>
 </navigation>
