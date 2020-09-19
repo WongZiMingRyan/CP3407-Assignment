@@ -33,7 +33,7 @@ public class FragmentCharlie extends Fragment {
         View view = inflater.inflate(R.layout.fragment_charlie, container, false);
 
         //Define the recyclerView
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerview3v1);
         //Initiate and attach the recyclerView adapter
         final WordListAdapter adapter = new WordListAdapter(view.getContext());
         recyclerView.setAdapter(adapter);

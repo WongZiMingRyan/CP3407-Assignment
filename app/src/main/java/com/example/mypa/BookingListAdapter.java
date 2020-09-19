@@ -17,7 +17,7 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
 
         private BookingViewHolder(View itemView) {
             super(itemView);
-            bookingItemView = itemView.findViewById(R.id.overhere);
+            bookingItemView = itemView.findViewById(R.id.textView5v1);
         }
     }
 
@@ -28,7 +28,7 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
 
     @Override
     public BookingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.overhere2, parent, false);
+        View itemView = mInflater.inflate(R.layout.recyclerview_item5v1, parent, false);
         return new BookingViewHolder(itemView);
     }
 

@@ -17,7 +17,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
         private WordViewHolder(View itemView) {
             super(itemView);
-            wordItemView = itemView.findViewById(R.id.textView);
+            wordItemView = itemView.findViewById(R.id.textView3v1);
         }
     }
 
@@ -28,7 +28,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     @Override
     public WordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.recyclerview_item3v1, parent, false);
         return new WordViewHolder(itemView);
     }
 
