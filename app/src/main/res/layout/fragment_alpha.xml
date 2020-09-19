@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imgButton1v1"
+        android:id="@+id/imageButton1v1"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginEnd="16dp"
@@ -89,8 +89,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Clock-in"
-        app:layout_constraintEnd_toEndOf="@+id/imgButton1v1"
-        app:layout_constraintStart_toStartOf="@+id/imgButton1v1"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton1v1"
+        app:layout_constraintStart_toStartOf="@+id/imageButton1v1"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
@@ -112,5 +112,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1v6" />
+
+    <ImageButton
+        android:id="@+id/imageButton1v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@android:drawable/ic_menu_my_calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

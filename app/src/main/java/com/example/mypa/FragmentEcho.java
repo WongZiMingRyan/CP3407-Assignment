@@ -61,7 +61,7 @@ public class FragmentEcho extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentEcho.this)
-                        .navigate(R.id.action_fragmentEcho_to_FragmentDelta);
+                        .navigate(R.id.action_fragmentEcho_to_FragmentAlpha);
             }
         });
 

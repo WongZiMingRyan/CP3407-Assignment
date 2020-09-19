@@ -18,8 +18,8 @@
             android:id="@+id/action_FragmentAlpha_to_FragmentDelta"
             app:destination="@id/FragmentDelta" />
         <action
-            android:id="@+id/action_FragmentAlpha_to_fragmentEcho"
-            app:destination="@id/fragmentEcho" />
+            android:id="@+id/action_FragmentAlpha_to_FragmentEcho"
+            app:destination="@id/FragmentEcho" />
     </fragment>
     <fragment
         android:id="@+id/FragmentCharlie"
@@ -40,15 +40,18 @@
             app:destination="@id/FragmentAlpha" />
         <action
             android:id="@+id/action_FragmentDelta_to_fragmentEcho"
-            app:destination="@id/fragmentEcho" />
+            app:destination="@id/FragmentEcho" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentEcho"
+        android:id="@+id/FragmentEcho"
         android:name="com.example.mypa.FragmentEcho"
         android:label="fragment_echo"
         tools:layout="@layout/fragment_echo" >
         <action
             android:id="@+id/action_fragmentEcho_to_FragmentDelta"
             app:destination="@id/FragmentDelta" />
+        <action
+            android:id="@+id/action_fragmentEcho_to_FragmentAlpha"
+            app:destination="@id/FragmentAlpha" />
     </fragment>
 </navigation>

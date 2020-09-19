@@ -23,11 +23,19 @@ public class FragmentAlpha extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.imgButton1v1).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.imageButton1v1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentAlpha.this)
                         .navigate(R.id.action_FragmentAlpha_to_FragmentCharlie);
+            }
+        });
+
+        view.findViewById(R.id.imageButton1v2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FragmentAlpha.this)
+                        .navigate(R.id.action_FragmentAlpha_to_FragmentEcho);
             }
         });
     }
