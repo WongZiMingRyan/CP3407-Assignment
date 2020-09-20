@@ -35,8 +35,18 @@ public class FragmentAlpha extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentAlpha.this)
+                        .navigate(R.id.action_FragmentAlpha_to_FragmentDelta);
+            }
+        });
+
+        view.findViewById(R.id.imageButton1v3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FragmentAlpha.this)
                         .navigate(R.id.action_FragmentAlpha_to_FragmentEcho);
             }
         });
+
+
     }
 }

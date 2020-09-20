@@ -1,8 +1,5 @@
 package com.example.mypa;
 
-import android.net.Uri;
-import android.nfc.NfcAdapter;
-import android.nfc.NfcEvent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -61,7 +58,7 @@ public class FragmentEcho extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentEcho.this)
-                        .navigate(R.id.action_fragmentEcho_to_FragmentAlpha);
+                        .navigate(R.id.action_FragmentEcho_to_FragmentAlpha);
             }
         });
 
@@ -88,19 +85,13 @@ public class FragmentEcho extends Fragment {
                         .setAction("Action", null).show();
             }
         });
+
+        view.findViewById(R.id.fab5v3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FragmentEcho.this)
+                        .navigate(R.id.action_FragmentEcho_to_FragmentDelta);
+            }
+        });
     }
-
-    private Uri[] fileUris = new Uri[10];
-
-    private class FileUriCallback implements
-            NfcAdapter.CreateBeamUrisCallback {
-        public FileUriCallback() {
-        }
-
-        @Override
-        public Uri[] createBeamUris(NfcEvent event) {
-            return fileUris;
-        }
-    }
-
 }

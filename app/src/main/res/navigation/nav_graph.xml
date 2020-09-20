@@ -39,8 +39,11 @@
             android:id="@+id/action_FragmentDelta_to_FragmentAlpha"
             app:destination="@id/FragmentAlpha" />
         <action
-            android:id="@+id/action_FragmentDelta_to_fragmentEcho"
+            android:id="@+id/action_FragmentDelta_to_FragmentEcho"
             app:destination="@id/FragmentEcho" />
+        <action
+            android:id="@+id/action_FragmentDelta_to_FragmentCharlie"
+            app:destination="@id/FragmentCharlie" />
     </fragment>
     <fragment
         android:id="@+id/FragmentEcho"
@@ -48,10 +51,10 @@
         android:label="fragment_echo"
         tools:layout="@layout/fragment_echo" >
         <action
-            android:id="@+id/action_fragmentEcho_to_FragmentDelta"
+            android:id="@+id/action_FragmentEcho_to_FragmentDelta"
             app:destination="@id/FragmentDelta" />
         <action
-            android:id="@+id/action_fragmentEcho_to_FragmentAlpha"
+            android:id="@+id/action_FragmentEcho_to_FragmentAlpha"
             app:destination="@id/FragmentAlpha" />
     </fragment>
 </navigation>
