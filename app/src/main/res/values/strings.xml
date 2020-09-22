@@ -10,6 +10,26 @@
     <string name="hello_first_fragment">Profile and Status</string>
     <string name="Tap_to_unlock_door">Tap to unlock door</string>
     <string name="demo_nfc_scan">Demo NFC scan</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Spinner arrays -->
+    <string-array name="facilities">
+        <item>Meeting Room 1</item>
+        <item>Meeting Room 2</item>
+        <item>Event Hall 1</item>
+        <item>Event Hall 2</item>
+    </string-array>
+    <string-array name="times">
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+    </string-array>
+
 </resources>

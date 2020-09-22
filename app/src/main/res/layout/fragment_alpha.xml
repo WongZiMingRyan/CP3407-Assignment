@@ -22,13 +22,12 @@
         android:layout_height="55dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerInside"
         android:src="@drawable/key"
-        app:layout_constraintBottom_toTopOf="@+id/divider2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1v5" />
 
     <TextView
         android:id="@+id/textView1v2"
@@ -81,18 +80,18 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1v4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton1v1" />
 
     <View
         android:id="@+id/divider3"
         android:layout_width="409dp"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton1v2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton1v3" />
 
     <TextView
         android:id="@+id/textView1v5"
@@ -124,17 +123,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-    <TextView
-        android:id="@+id/textView1v8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Book Facility"
-        app:layout_constraintEnd_toStartOf="@+id/textView1v7"
-        app:layout_constraintTop_toBottomOf="@+id/divider2" />
-
     <ImageButton
         android:id="@+id/imageButton1v3"
         android:layout_width="wrap_content"
@@ -144,16 +132,5 @@
         android:src="@android:drawable/ic_menu_my_calendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1v7" />
-
-    <ImageButton
-        android:id="@+id/imageButton1v2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_input_add"
-        app:layout_constraintEnd_toEndOf="@+id/textView1v8"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton1v3"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toStartOf="@+id/textView1v8"
-        app:layout_constraintTop_toBottomOf="@+id/textView1v8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

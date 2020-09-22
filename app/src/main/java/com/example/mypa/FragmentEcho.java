@@ -1,6 +1,5 @@
 package com.example.mypa;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,11 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.Calendar;
 import java.util.List;
 
 public class FragmentEcho extends Fragment {
@@ -40,8 +40,8 @@ public class FragmentEcho extends Fragment {
         //Define the recyclerView
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview5v1);
         //Initiate and attach the recyclerView adapter
-        final BookingListAdapter adapter = new BookingListAdapter(view.getContext());
-        recyclerView.setAdapter(adapter);
+        final BookingListAdapter bookingListAdapter = new BookingListAdapter(view.getContext());
+        recyclerView.setAdapter(bookingListAdapter);
         //Prepare the recyclerViews layout manager
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
@@ -51,9 +51,24 @@ public class FragmentEcho extends Fragment {
             @Override
             public void onChanged(@Nullable final List<Booking> bookings) {
                 // Update the cached copy of the words in the adapter.
-                adapter.setBookings(bookings);
+                bookingListAdapter.setBookings(bookings);
             }
         });
+
+        //Define facility and time spinners
+        final Spinner spinnerFacility = (Spinner) view.findViewById(R.id.spinner5v1);
+        final Spinner spinnerTime = (Spinner) view.findViewById(R.id.spinner5v2);
+        // Create ArrayAdapters using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterSpinnerFacility = ArrayAdapter.createFromResource(view.getContext(),
+                R.array.facilities, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterSpinnerTime = ArrayAdapter.createFromResource(view.getContext(),
+                R.array.times, android.R.layout.simple_spinner_item);
+        // Specify the layouts to use when the lists of choices appear
+        adapterSpinnerFacility.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterSpinnerTime.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapters to the spinners
+        spinnerFacility.setAdapter(adapterSpinnerFacility);
+        spinnerTime.setAdapter(adapterSpinnerTime);
 
         view.findViewById(R.id.fab5v1).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,10 +77,17 @@ public class FragmentEcho extends Fragment {
                         .navigate(R.id.action_FragmentEcho_to_FragmentAlpha);
             }
         });
-        mDatePicker = view.findViewById(R.id.datePicker1);
+
+        mDatePicker = view.findViewById(R.id.datePicker5v1);
+
         view.findViewById(R.id.fab5v2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Get the facility and time selected in the spinners
+                String facility = spinnerFacility.getSelectedItem().toString();
+                String time = spinnerTime.getSelectedItem().toString();
+                //Add formatting to the facility for displaying
+                String entryFacility = facility + " on";
                 //Get the day, month, and year set in the date picker
                 String day = Integer.toString(mDatePicker.getDayOfMonth());
                 String month = Integer.toString(mDatePicker.getMonth());
@@ -77,22 +99,15 @@ public class FragmentEcho extends Fragment {
                 if (month.length() == 1){
                     month = "0" + month;
                 }
-                //date entries are inserted as Year/month/day to help with sorting
-                String entry = year + "/" + month + "/" + day;
-                Booking booking = new Booking("test user booked","facility on" , entry);
+                //Date entries are inserted as Year/month/day to help with sorting
+                String entryTime = year + "/" + month + "/" + day + " at " + time;
+                Booking booking = new Booking("test user booked",
+                        entryFacility , entryTime);
                 mBookingViewModel.insert(booking);
                 Snackbar.make(view, "Your Booking has been submitted", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
 
-        view.findViewById(R.id.fab5v3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                NavHostFragment.findNavController(FragmentEcho.this)
-                        .navigate(R.id.action_FragmentEcho_to_FragmentDelta);
-            }
-        });
     }
 }
