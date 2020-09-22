@@ -31,7 +31,11 @@ public class FragmentEcho extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_echo, container, false);
+        return inflater.inflate(R.layout.fragment_echo, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         //Define the recyclerView
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview5v1);
@@ -50,14 +54,6 @@ public class FragmentEcho extends Fragment {
                 adapter.setBookings(bookings);
             }
         });
-
-
-        return view;
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
 
         view.findViewById(R.id.fab5v1).setOnClickListener(new View.OnClickListener() {
             @Override

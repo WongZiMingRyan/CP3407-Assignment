@@ -28,9 +28,13 @@ public class FragmentCharlie extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_charlie, container, false);
+        return inflater.inflate(R.layout.fragment_charlie, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         //Define the recyclerView
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview3v1);
@@ -49,12 +53,6 @@ public class FragmentCharlie extends Fragment {
                 adapter.setWords(words);
             }
         });
-        return view;
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
 
         view.findViewById(R.id.fab3v1).setOnClickListener(new View.OnClickListener() {
             @Override
