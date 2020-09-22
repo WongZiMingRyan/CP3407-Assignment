@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -24,6 +25,7 @@ import java.util.List;
 public class FragmentEcho extends Fragment {
 
     private BookingViewModel mBookingViewModel;
+    private DatePicker mDatePicker;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +50,8 @@ public class FragmentEcho extends Fragment {
                 adapter.setBookings(bookings);
             }
         });
+
+
         return view;
     }
 
@@ -62,25 +66,24 @@ public class FragmentEcho extends Fragment {
                         .navigate(R.id.action_FragmentEcho_to_FragmentAlpha);
             }
         });
-
+        mDatePicker = view.findViewById(R.id.datePicker1);
         view.findViewById(R.id.fab5v2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Calendar rightNow = Calendar.getInstance();
-                String hour = Integer.toString(rightNow.get(Calendar.HOUR_OF_DAY));
-                if (hour.length() == 1){
-                    hour = "0" + hour;
-                } if (hour.length() == 0) {
-                    hour = "00";
+                //Get the day, month, and year set in the date picker
+                String day = Integer.toString(mDatePicker.getDayOfMonth());
+                String month = Integer.toString(mDatePicker.getMonth());
+                String year = Integer.toString(mDatePicker.getYear());
+                //Format day and month to maintain 2 digit format and help the sorting
+                if (day.length() == 1){
+                    day = "0" + day;
                 }
-                String minute = Integer.toString(rightNow.get(Calendar.MINUTE));
-                if (minute.length() == 1){
-                    minute = "0" + minute;
-                } if (minute.length() == 0) {
-                    minute = "00";
+                if (month.length() == 1){
+                    month = "0" + month;
                 }
-                String entry = hour + ":" + minute;
-                Booking booking = new Booking("test user","facility" , entry);
+                //date entries are inserted as Year/month/day to help with sorting
+                String entry = year + "/" + month + "/" + day;
+                Booking booking = new Booking("test user booked","facility on" , entry);
                 mBookingViewModel.insert(booking);
                 Snackbar.make(view, "Your Booking has been submitted", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
@@ -88,8 +91,6 @@ public class FragmentEcho extends Fragment {
         });
 
         view.findViewById(R.id.fab5v3).setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
 
