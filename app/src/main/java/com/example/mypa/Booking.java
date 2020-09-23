@@ -14,40 +14,14 @@ public class Booking {
 
     @NonNull
     //Defines a column in the table
-    @ColumnInfo(name = "user")
-    private String mBookingUser;
-
-    @NonNull
-    //Defines a column in the table
-    @ColumnInfo(name = "facility")
-    private String mBookingFacility;
-
-    @NonNull
-    //Defines a column in the table
-    @ColumnInfo(name = "time")
-    private String mBookingTime;
-
-    //Defines getter for booking user
-    public String getBookingUser(){return this.mBookingUser;}
-
-    //Defines getter for booking facility
-    public String getBookingFacility(){return this.mBookingFacility;}
-
-    //Defines getter for booking time
-    public String getBookingTime(){return this.mBookingTime;}
+    @ColumnInfo(name = "booking")
+    private String mBooking;
 
     //Defines getter for whole booking entry
     public String getBooking(){
-        String bookingEntry = this.mBookingUser + " " + this.mBookingFacility
-                + " " + this.mBookingTime;
-        return bookingEntry;}
-
+        return this.mBooking;}
 
     //Defines a setter
-    public Booking(String bookingUser, String bookingFacility, String bookingTime) {
-        this.mBookingUser = bookingUser;
-        this.mBookingFacility = bookingFacility;
-        this.mBookingTime = bookingTime;}
-
-
+    public Booking(String booking) {
+        this.mBooking = booking;}
 }

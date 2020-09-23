@@ -21,7 +21,7 @@ public interface BookingDao {
     void deleteAll();
 
     //Defines a method to get all data from entity by ascending order
-    @Query("SELECT * from booking_table ORDER BY time ASC")
+    @Query("SELECT * from booking_table ORDER BY booking ASC")
     //Note: the LiveData wrapping here is because the UI to be used is a LiveData class
     LiveData<List<Booking>> getBookingsByTime();
 }

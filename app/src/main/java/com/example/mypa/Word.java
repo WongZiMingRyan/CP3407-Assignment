@@ -18,10 +18,12 @@ public class Word {
     @ColumnInfo(name = "word")
     private String mWord;
 
-    //Defines a setter
-    public Word(String word) {this.mWord = word;}
-
     //Defines getter
-    public String getWord(){return this.mWord;}
+    public String getWord(){
+        return this.mWord;}
+
+    //Defines a setter
+    public Word(String word) {
+        this.mWord = word;}
 }
 

@@ -87,7 +87,7 @@ public class FragmentEcho extends Fragment {
                 String facility = spinnerFacility.getSelectedItem().toString();
                 String time = spinnerTime.getSelectedItem().toString();
                 //Add formatting to the facility for displaying
-                String entryFacility = facility + " on";
+                String entryFacility = facility;
                 //Get the day, month, and year set in the date picker
                 String day = Integer.toString(mDatePicker.getDayOfMonth());
                 String month = Integer.toString(mDatePicker.getMonth());
@@ -101,8 +101,9 @@ public class FragmentEcho extends Fragment {
                 }
                 //Date entries are inserted as Year/month/day to help with sorting
                 String entryTime = year + "/" + month + "/" + day + " at " + time;
-                Booking booking = new Booking("test user booked",
-                        entryFacility , entryTime);
+
+                String entryBooking = entryTime + " reserved " + entryFacility;
+                Booking booking = new Booking(entryBooking);
                 mBookingViewModel.insert(booking);
                 Snackbar.make(view, "Your Booking has been submitted", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
