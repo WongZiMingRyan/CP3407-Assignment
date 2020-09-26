@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -99,13 +100,21 @@ public class FragmentEcho extends Fragment {
                 }
                 //Date entries are inserted as Year/month/day to help with sorting
                 String entryTime = year + "/" + month + "/" + day + " at " + time;
-                //Add the entry into the database
+                //Try to add the entry into the database
                 String entryBooking = entryTime + " reserved " + facility;
                 Booking booking = new Booking(entryBooking);
-                mBookingViewModel.insert(booking);
-                //Create snackbar showing confirmation
-                Snackbar.make(view, "Your Booking has been submitted", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                try {
+                    mBookingViewModel.insert(booking);
+                    //Create snackbar message showing confirmation
+                    Snackbar.make(view, "Your Booking has been submitted",
+                            Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                } catch(Exception e) {
+                    //Create snackbar message showing confirmation
+                    Snackbar.make(view, "Your Booking has failed", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+
+
             }
         });
 

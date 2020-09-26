@@ -22,7 +22,7 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
     }
 
     private final LayoutInflater mInflater;
-    private List<Booking> mBookings; // Cached copy of words
+    private List<Booking> mBookings; // Cached copy of bookings
 
     BookingListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
